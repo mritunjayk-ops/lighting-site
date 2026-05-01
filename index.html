@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RG Ventures Lighting | Premium Lighting Studio</title>
+    <meta
+      name="description"
+      content="RG Ventures Lighting is a Delhi-based lighting studio offering premium decorative lighting, imported collections, and custom fixtures for modern interiors."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              obsidian: "#0a0a0a",
+              midnight: "#121212",
+              graphite: "#1a1a1a",
+              brass: "#d4af37",
+              champagne: "#f2dd97",
+              mist: "#cdbf95",
+              ivory: "#f5f5f5",
+            },
+            fontFamily: {
+              display: ["Playfair Display", "serif"],
+              sans: ["Inter", "sans-serif"],
+            },
+            boxShadow: {
+              glow: "0 26px 90px rgba(0, 0, 0, 0.52)",
+              card: "0 18px 50px rgba(0, 0, 0, 0.34)",
+            },
+            backgroundImage: {
+              grain:
+                "radial-gradient(circle at top, rgba(212, 175, 55, 0.14), transparent 34%), radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.05), transparent 24%)",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        color-scheme: dark;
+        scroll-padding-top: 24px;
+      }
+
+      body {
+        background: #0a0a0a;
+      }
+
+      .balanced-title {
+        text-wrap: balance;
+      }
+
+      .page-shell {
+        opacity: 0;
+        transform: translateY(10px);
+        animation: page-fade 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.05s forwards;
+      }
+
+      .intro-fade {
+        opacity: 0;
+        transform: translateY(22px);
+        animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+      }
+
+      .reveal-section {
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(10px);
+        transition:
+          opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+          filter 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        transition-delay: var(--reveal-delay, 0ms);
+      }
+
+      .reveal-section.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+      }
+
+      .whatsapp-float {
+        animation: soft-pulse 2.8s ease-in-out infinite;
+      }
+
+      @keyframes page-fade {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fade-up {
+        from {
+          opacity: 0;
+          transform: translateY(22px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes soft-pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          box-shadow: 0 14px 36px rgba(37, 211, 102, 0.2);
+        }
+        50% {
+          transform: scale(1.03);
+          box-shadow: 0 18px 42px rgba(37, 211, 102, 0.26);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .page-shell,
+        .intro-fade,
+        .reveal-section,
+        .whatsapp-float {
+          animation: none !important;
+          opacity: 1 !important;
+          transform: none !important;
+          filter: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-obsidian font-sans leading-relaxed text-ivory antialiased">
+    <div class="page-shell min-h-screen bg-grain">
+      <header class="relative min-h-screen overflow-hidden">
+        <div class="absolute inset-0">
+          <img
+            src="images/heroimage.jpg"
+            alt="Luxury lighting in a premium interior"
+            class="h-full w-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-r from-black via-black/74 to-transparent"></div>
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(212,175,55,0.18),transparent_30%)]"></div>
+        </div>
+
+        <nav class="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-10">
+          <div>
+            <p class="font-display text-[1.9rem] tracking-[0.12em] text-champagne sm:text-4xl">
+              RG Ventures Lighting
+            </p>
+            <p class="mt-1 text-[0.68rem] uppercase tracking-[0.45em] text-stone-400">
+              Delhi Lighting Studio
+            </p>
+          </div>
+          <div class="hidden items-center gap-8 text-sm uppercase tracking-[0.24em] text-stone-300 md:flex">
+            <a href="#collection" class="transition duration-300 hover:text-champagne">Collection</a>
+            <a href="#about" class="transition duration-300 hover:text-champagne">About</a>
+            <a href="#services" class="transition duration-300 hover:text-champagne">Services</a>
+            <a href="#contact" class="transition duration-300 hover:text-champagne">Contact</a>
+          </div>
+        </nav>
+
+        <section class="relative z-10 mx-auto flex min-h-[calc(100vh-84px)] max-w-7xl items-center px-6 py-10 lg:px-10 lg:py-16">
+          <div class="intro-fade max-w-3xl">
+            <p class="mb-5 text-sm uppercase tracking-[0.48em] text-brass">
+              Premium Lighting Solutions &amp; Custom Fixtures
+            </p>
+            <h1 class="balanced-title max-w-[12ch] font-display text-[3.4rem] leading-[0.92] tracking-[0.055em] text-ivory sm:text-[4.9rem] lg:text-[6.8rem]">
+              Lighting that defines spaces
+            </h1>
+            <p class="mt-7 max-w-2xl text-lg leading-relaxed text-stone-300 sm:mt-8 sm:text-xl sm:leading-9">
+              Designer chandeliers, pendant lights, and custom lighting crafted for modern interiors
+            </p>
+            <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+              <a
+                href="#collection"
+                class="inline-flex min-h-12 items-center justify-center rounded-full border border-yellow-400/70 bg-gradient-to-r from-yellow-500 to-yellow-600 px-8 py-4 text-sm font-semibold uppercase tracking-[0.26em] text-black shadow-[0_14px_36px_rgba(212,175,55,0.28)] transition duration-300 hover:scale-105 hover:shadow-[0_20px_46px_rgba(212,175,55,0.35)]"
+              >
+                View Collection
+              </a>
+              <a
+                href="#contact"
+                class="inline-flex min-h-12 items-center justify-center rounded-full border border-white/20 bg-white/[0.04] px-8 py-4 text-sm font-semibold uppercase tracking-[0.26em] text-ivory transition duration-300 hover:scale-105 hover:border-brass hover:text-champagne"
+              >
+                Contact Studio
+              </a>
+            </div>
+          </div>
+        </section>
+      </header>
+
+      <main class="space-y-16 pb-16 sm:space-y-20 sm:pb-20">
+        <section class="reveal-section mx-auto max-w-7xl px-6 py-10 sm:py-14 lg:px-10" id="collection">
+          <div class="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div class="max-w-2xl">
+              <p class="text-sm uppercase tracking-[0.4em] text-brass">Product Collection</p>
+              <h2 class="balanced-title mt-4 font-display text-4xl leading-[1.08] tracking-[0.05em] text-ivory sm:text-5xl">
+                Premium lighting selected for refined residential and hospitality spaces.
+              </h2>
+            </div>
+            <p class="max-w-xl text-base leading-8 text-stone-400">
+              Decorative pieces with a clean architectural presence, elevated finishes, and a warm luxury expression.
+            </p>
+          </div>
+
+          <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <article class="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-card backdrop-blur-md transition duration-500 ease-in-out hover:translate-y-[-4px] hover:border-brass/40 hover:shadow-[0_28px_70px_rgba(212,175,55,0.14)]">
+              <div class="overflow-hidden">
+                <img
+                  src="images/product1.jpg"
+                  alt="Designer pendant lighting"
+                  class="h-80 w-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-[1.06]"
+                />
+              </div>
+              <div class="p-7">
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="font-display text-3xl leading-tight tracking-[0.04em] text-ivory">Celeste Pendant</h3>
+                    <p class="mt-2 text-sm uppercase tracking-[0.35em] text-mist">Brushed brass</p>
+                  </div>
+                  <span class="rounded-full border border-brass/40 px-3 py-1 text-xs uppercase tracking-[0.28em] text-brass">
+                    Signature
+                  </span>
+                </div>
+                <p class="mt-5 text-sm leading-8 text-stone-400">
+                  A sculptural pendant with a warm metallic finish for dining spaces, lounges, and entry halls.
+                </p>
+              </div>
+            </article>
+
+            <article class="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-card backdrop-blur-md transition duration-500 ease-in-out hover:translate-y-[-4px] hover:border-brass/40 hover:shadow-[0_28px_70px_rgba(212,175,55,0.14)]">
+              <div class="overflow-hidden">
+                <img
+                  src="images/product2.jpg"
+                  alt="Luxury chandelier"
+                  class="h-80 w-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-[1.06]"
+                />
+              </div>
+              <div class="p-7">
+                <h3 class="font-display text-3xl leading-tight tracking-[0.04em] text-ivory">Orion Chandelier</h3>
+                <p class="mt-2 text-sm uppercase tracking-[0.35em] text-mist">Hand-finished glass</p>
+                <p class="mt-5 text-sm leading-8 text-stone-400">
+                  Layered illumination with a commanding silhouette suited to premium hospitality and formal interiors.
+                </p>
+              </div>
+            </article>
+
+            <article class="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-card backdrop-blur-md transition duration-500 ease-in-out hover:translate-y-[-4px] hover:border-brass/40 hover:shadow-[0_28px_70px_rgba(212,175,55,0.14)]">
+              <div class="overflow-hidden">
+                <img
+                  src="images/product3.jpg"
+                  alt="Decorative wall light"
+                  class="h-80 w-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-[1.06]"
+                />
+              </div>
+              <div class="p-7">
+                <h3 class="font-display text-3xl leading-tight tracking-[0.04em] text-ivory">Aurelia Sconce</h3>
+                <p class="mt-2 text-sm uppercase tracking-[0.35em] text-mist">Satin bronze</p>
+                <p class="mt-5 text-sm leading-8 text-stone-400">
+                  A refined accent fixture designed to add depth and visual rhythm to corridors and feature walls.
+                </p>
+              </div>
+            </article>
+
+            <article class="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-card backdrop-blur-md transition duration-500 ease-in-out hover:translate-y-[-4px] hover:border-brass/40 hover:shadow-[0_28px_70px_rgba(212,175,55,0.14)]">
+              <div class="overflow-hidden">
+                <img
+                  src="images/product4.jpg"
+                  alt="Modern table lamp"
+                  class="h-80 w-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-[1.06]"
+                />
+              </div>
+              <div class="p-7">
+                <h3 class="font-display text-3xl leading-tight tracking-[0.04em] text-ivory">Noir Table Lamp</h3>
+                <p class="mt-2 text-sm uppercase tracking-[0.35em] text-mist">Smoked crystal</p>
+                <p class="mt-5 text-sm leading-8 text-stone-400">
+                  A moody table piece with soft ambient output for suites, bedrooms, and premium lounge corners.
+                </p>
+              </div>
+            </article>
+
+            <article class="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-card backdrop-blur-md transition duration-500 ease-in-out hover:translate-y-[-4px] hover:border-brass/40 hover:shadow-[0_28px_70px_rgba(212,175,55,0.14)]">
+              <div class="overflow-hidden">
+                <img
+                  src="images/product5.jpg"
+                  alt="Pendant cluster installation"
+                  class="h-80 w-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-[1.06]"
+                />
+              </div>
+              <div class="p-7">
+                <h3 class="font-display text-3xl leading-tight tracking-[0.04em] text-ivory">Verve Cluster</h3>
+                <p class="mt-2 text-sm uppercase tracking-[0.35em] text-mist">Custom composition</p>
+                <p class="mt-5 text-sm leading-8 text-stone-400">
+                  A dramatic suspended arrangement made for double-height spaces and statement stair volumes.
+                </p>
+              </div>
+            </article>
+
+            <article class="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-card backdrop-blur-md transition duration-500 ease-in-out hover:translate-y-[-4px] hover:border-brass/40 hover:shadow-[0_28px_70px_rgba(212,175,55,0.14)]">
+              <div class="overflow-hidden">
+                <img
+                  src="images/product6.jpg"
+                  alt="Luxury floor light"
+                  class="h-80 w-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-[1.06]"
+                />
+              </div>
+              <div class="p-7">
+                <h3 class="font-display text-3xl leading-tight tracking-[0.04em] text-ivory">Solace Floor Light</h3>
+                <p class="mt-2 text-sm uppercase tracking-[0.35em] text-mist">Matte onyx</p>
+                <p class="mt-5 text-sm leading-8 text-stone-400">
+                  Minimal and elegant, with a soft ambient glow that complements contemporary interior palettes.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="reveal-section mx-auto grid max-w-7xl gap-8 px-6 py-10 sm:py-14 lg:grid-cols-[1fr_1.05fr] lg:gap-12 lg:px-10" id="about">
+          <div class="overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-glow backdrop-blur-md">
+            <img
+              src="images/product3.jpg"
+              alt="RG Ventures Lighting showroom detail"
+              class="h-full min-h-[460px] w-full object-cover"
+            />
+          </div>
+
+          <div class="flex flex-col justify-center">
+            <p class="text-sm uppercase tracking-[0.4em] text-brass">About RG Ventures Lighting</p>
+            <h2 class="balanced-title mt-4 font-display text-4xl leading-[1.08] tracking-[0.05em] text-ivory sm:text-5xl">
+              Premium decorative lighting with a precise architectural point of view.
+            </h2>
+            <div class="mt-6 space-y-5 text-base leading-9 text-stone-300">
+              <p>
+                RG Ventures Lighting is a Delhi-based lighting studio specializing in premium decorative lighting and custom fixtures.
+              </p>
+              <p>
+                From bespoke chandeliers to curated imported collections, we bring together craftsmanship and design to create statement lighting for modern spaces.
+              </p>
+              <p>
+                Our work has been featured in high-end hospitality and residential projects, including installations in premium hotels such as JW Marriott.
+              </p>
+              <p>
+                We focus on material quality, design precision, and lighting that enhances architectural spaces.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="reveal-section mx-auto max-w-7xl px-6 py-10 sm:py-14 lg:px-10" id="services">
+          <div class="mb-12 max-w-2xl">
+            <p class="text-sm uppercase tracking-[0.4em] text-brass">Services</p>
+            <h2 class="balanced-title mt-4 font-display text-4xl leading-[1.08] tracking-[0.05em] text-ivory sm:text-5xl">
+              Focused lighting services for premium interior projects.
+            </h2>
+          </div>
+
+          <div class="grid gap-6 md:grid-cols-3">
+            <article class="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-card backdrop-blur-md transition duration-300 hover:translate-y-[-4px] hover:border-brass/40 hover:bg-white/[0.07]">
+              <h3 class="font-display text-3xl leading-tight tracking-[0.04em] text-ivory">
+                Custom Lighting Design &amp; Manufacturing
+              </h3>
+              <p class="mt-4 text-sm leading-8 text-stone-400">
+                Tailored lighting solutions designed and produced to match project requirements.
+              </p>
+            </article>
+
+            <article class="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-card backdrop-blur-md transition duration-300 hover:translate-y-[-4px] hover:border-brass/40 hover:bg-white/[0.07]">
+              <h3 class="font-display text-3xl leading-tight tracking-[0.04em] text-ivory">Imported Lighting Solutions</h3>
+              <p class="mt-4 text-sm leading-8 text-stone-400">
+                Carefully curated international lighting collections for modern interiors.
+              </p>
+            </article>
+
+            <article class="rounded-3xl border border-white/10 bg-white/5 p-8 shadow-card backdrop-blur-md transition duration-300 hover:translate-y-[-4px] hover:border-brass/40 hover:bg-white/[0.07]">
+              <h3 class="font-display text-3xl leading-tight tracking-[0.04em] text-ivory">Interior Lighting Consultation</h3>
+              <p class="mt-4 text-sm leading-8 text-stone-400">
+                Expert guidance to enhance ambience, functionality, and visual impact.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="reveal-section mx-auto max-w-7xl px-6 py-10 lg:px-10" id="trust">
+          <div class="rounded-3xl border border-brass/15 bg-gradient-to-r from-white/[0.03] via-[#14110a] to-white/[0.03] px-8 py-12 text-center shadow-card backdrop-blur-md sm:px-12">
+            <div class="mx-auto mb-6 h-px w-24 bg-gradient-to-r from-transparent via-brass to-transparent"></div>
+            <p class="text-sm uppercase tracking-[0.4em] text-brass">Trusted by Premium Spaces</p>
+            <p class="mx-auto mt-5 max-w-3xl text-base leading-9 text-stone-300 sm:text-lg">
+              Our lighting solutions are featured in high-end hospitality and residential projects, including installations in luxury hotels such as JW Marriott.
+            </p>
+            <div class="mx-auto mt-6 h-px w-32 bg-gradient-to-r from-transparent via-brass/60 to-transparent"></div>
+          </div>
+        </section>
+
+        <section class="reveal-section mx-auto max-w-7xl px-6 py-10 sm:py-14 lg:px-10" id="contact">
+          <div class="grid overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.05] via-[#0f0f0f] to-[#191309] shadow-glow backdrop-blur-md lg:grid-cols-[0.95fr_1.05fr]">
+            <div class="p-6 sm:p-10">
+              <p class="text-sm uppercase tracking-[0.4em] text-brass">Contact</p>
+              <h2 class="balanced-title mt-4 font-display text-4xl leading-[1.08] tracking-[0.05em] text-ivory sm:text-5xl">
+                Discuss your next lighting project with RG Ventures Lighting.
+              </h2>
+              <p class="mt-6 max-w-lg text-base leading-9 text-stone-300">
+                Reach out for custom fixtures, imported collections, or expert guidance on premium interior lighting.
+              </p>
+              <div class="mt-10 space-y-5 text-sm leading-8 text-stone-300">
+                <p>
+                  <span class="text-stone-500">Address:</span><br />
+                  FLO Studio, 2/72 WHS, Kirti Nagar,<br />
+                  Next to Royal Moments Banquet,<br />
+                  New Delhi, India
+                </p>
+                <p><span class="text-stone-500">Phone:</span> +91 7827XXXXXX</p>
+                <p><span class="text-stone-500">Email:</span> info@rgventureslighting.com</p>
+              </div>
+            </div>
+
+            <form class="grid gap-5 bg-white/5 p-6 backdrop-blur-md sm:p-10">
+              <div>
+                <label for="name" class="mb-2 block text-xs uppercase tracking-[0.28em] text-stone-400">Name</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Your name"
+                  class="min-h-12 w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-ivory outline-none transition duration-300 placeholder:text-stone-500 focus:border-brass"
+                />
+              </div>
+              <div>
+                <label for="phone" class="mb-2 block text-xs uppercase tracking-[0.28em] text-stone-400">Phone Number</label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  required
+                  placeholder="+91 7827XXXXXX"
+                  class="min-h-12 w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-ivory outline-none transition duration-300 placeholder:text-stone-500 focus:border-brass"
+                />
+              </div>
+              <div>
+                <label for="project-type" class="mb-2 block text-xs uppercase tracking-[0.28em] text-stone-400">Project Type</label>
+                <select
+                  id="project-type"
+                  name="project_type"
+                  class="min-h-12 w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-ivory outline-none transition duration-300 focus:border-brass"
+                >
+                  <option value="" selected>Select project type</option>
+                  <option value="Home">Home</option>
+                  <option value="Hotel">Hotel</option>
+                  <option value="Office">Office</option>
+                  <option value="Retail">Retail</option>
+                </select>
+              </div>
+              <div>
+                <label for="message" class="mb-2 block text-xs uppercase tracking-[0.28em] text-stone-400">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="Tell us about your space, size, and lighting requirement"
+                  class="w-full rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 text-ivory outline-none transition duration-300 placeholder:text-stone-500 focus:border-brass"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="inline-flex min-h-12 items-center justify-center rounded-full border border-yellow-400/70 bg-gradient-to-r from-yellow-500 to-yellow-600 px-8 py-4 text-sm font-semibold uppercase tracking-[0.28em] text-black shadow-[0_14px_36px_rgba(212,175,55,0.28)] transition duration-300 hover:scale-105 hover:shadow-[0_20px_46px_rgba(212,175,55,0.35)]"
+              >
+                Get Lighting Quote
+              </button>
+              <p class="text-sm text-stone-400">Our team will contact you within 24 hours</p>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <a
+        href="https://wa.me/917827XXXXXX"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Chat on WhatsApp"
+        class="whatsapp-float fixed bottom-5 right-5 z-30 inline-flex h-14 w-14 items-center justify-center rounded-full border border-green-400/30 bg-[#25D366] text-white shadow-[0_14px_36px_rgba(37,211,102,0.24)] transition duration-300 hover:scale-105 hover:shadow-[0_18px_44px_rgba(37,211,102,0.3)] sm:bottom-6 sm:right-6"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" class="h-5 w-5">
+          <path
+            d="M19.11 17.19c-.27-.14-1.59-.78-1.84-.87-.25-.09-.43-.14-.61.14-.18.27-.7.87-.86 1.05-.16.18-.32.2-.59.07-.27-.14-1.16-.43-2.2-1.38-.81-.72-1.35-1.62-1.51-1.89-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.46.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.02-.22-.53-.44-.45-.61-.46h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.64 1.11 2.82c.14.18 1.92 2.93 4.65 4.11.65.28 1.16.45 1.55.58.65.21 1.24.18 1.71.11.52-.08 1.59-.65 1.82-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32Z"
+          />
+          <path
+            d="M16.02 3.2c-6.95 0-12.6 5.62-12.6 12.53 0 2.21.58 4.38 1.69 6.3L3.2 28.8l6.97-1.82a12.63 12.63 0 0 0 5.85 1.48h.01c6.95 0 12.6-5.62 12.6-12.53 0-3.35-1.31-6.51-3.7-8.87A12.51 12.51 0 0 0 16.02 3.2Zm0 23.14h-.01a10.53 10.53 0 0 1-5.37-1.47l-.39-.23-4.14 1.08 1.11-4.03-.26-.41a10.39 10.39 0 0 1-1.61-5.55c0-5.78 4.73-10.48 10.56-10.48 2.82 0 5.46 1.09 7.45 3.07a10.4 10.4 0 0 1 3.1 7.41c0 5.79-4.74 10.49-10.44 10.49Z"
+          />
+        </svg>
+        <span class="sr-only">Chat on WhatsApp</span>
+      </a>
+      <script>
+        const revealObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                revealObserver.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.16,
+            rootMargin: "0px 0px -6% 0px",
+          }
+        );
+
+        document.querySelectorAll(".reveal-section").forEach((section, index) => {
+          section.style.setProperty("--reveal-delay", `${Math.min(index * 70, 210)}ms`);
+          revealObserver.observe(section);
+        });
+      </script>
+    </div>
+  </body>
+</html>
